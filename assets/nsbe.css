@@ -1,0 +1,777 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin');
+
+*,
+*::before,
+*::after{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden !important;
+    max-width: 1200px;
+    margin: auto;
+    border: 0;
+    color: #565a5c;
+    line-height: 1.43;
+}
+/* HTML5 display definitions
+   ========================================================================== 
+*/
+
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+*/   
+    
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+img {
+    border: none;
+}
+
+/* grid display definitions
+   ========================================================================== 
+*/
+.grid{
+    margin: 0;
+    width: 100%;
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    -ms-grid-column-align: center;
+
+    grid-column-gap: .5em;
+    grid-row-gap: 1em;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.item1{ -ms-grid-column: 1; -ms-grid-row: 1;  -ms-grid-column-align: center;}
+.item2{ -ms-grid-column: 1; -ms-grid-row: 2; -ms-grid-column-align: center;}
+.item3{ -ms-grid-column: 1; -ms-grid-row: 3; -ms-grid-column-align: center;}
+.item4{ -ms-grid-column: 1; -ms-grid-row: 4; -ms-grid-column-align: center;}
+.item5{ -ms-grid-column: 1; -ms-grid-row: 5; -ms-grid-column-align: center;}
+.item6{ -ms-grid-column: 1; -ms-grid-row: 6; -ms-grid-column-align: center;}
+.item7{ -ms-grid-column: 1; -ms-grid-row: 7; -ms-grid-column-align: center;}
+.item8{ -ms-grid-column: 1; -ms-grid-row: 8; -ms-grid-column-align: center;}
+.item9{ -ms-grid-column: 1; -ms-grid-row: 9; -ms-grid-column-align: center;}
+.item10{ -ms-grid-column: 1; -ms-grid-row: 10; -ms-grid-column-align: center;}
+
+
+/**
+ column grid for mobile
+**/
+
+[class*="col-"] {
+    width: 100%;
+    
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    border: none;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*********************************
+    sidebar menu bars styling 
+**********************************/
+.wrap {
+    width: 40px;
+    margin: 1.2em 1.5em;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #333;
+}
+.bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 3px;
+    background-color: #eee;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+    -moz-transform: rotate(-45deg) translate(-5px, 6px);
+    -ms-transform: rotate(-45deg) translate(-5px, 6px);
+    transform: rotate(-45deg) translate(-5px, 6px);    
+}
+.change .bar2 {
+    opacity: 0;    
+}
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -8px);
+    -moz-transform: rotate(45deg) translate(6px, -8px);
+    -ms-transform: rotate(45deg) translate(-6px, -8px);
+    transform: rotate(45deg) translate(-6px, -8px);    
+}
+/*********************
+    sidebar styling 
+**********************/
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x : hidden;
+    transition: 1s;
+    padding-top: 1.5em;
+    margin-top: 48px;
+    opacity: .825;
+    
+}
+.sidebar a {
+    padding: 1em .5em 1em 2em;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: .7s;
+    font-size: 12px;
+    width: 200px;
+}
+.sidebar a:hover, .offcanvas a:focus {
+    color: rgb(63, 191, 191);
+}
+.sidebar a:hover:not(.active){       
+    color: rgb(63, 191, 191); 
+}
+.sidebar .active{ 
+    color: rgb(63, 191, 191); 
+}
+.sidebar .material-icons{
+    font-size: 24px;
+    color: #eaeaea;
+    display: table-cell;
+    width: 60px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+}
+.sidebar .text {
+    padding-left: 1em;
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    width: 190px;
+}
+
+/**********  End sidebar  ***********/
+
+.topnav{
+    display: block;
+    z-index: 9998;
+    position: fixed;
+    overflow: hidden;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    max-width: 1202px;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    clear: both;
+    background-color: #333;
+
+}
+.topnav ul{
+    display: none;
+    width: 100%;
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+.topnav li{
+    float: left;
+}
+.topnav .right{
+    float: right;
+}
+.topnav a{
+    color: white;
+    display: block;
+    text-align: center;
+    padding:0.875em 1em;
+    text-decoration: none;
+}
+.topnav a:hover:not(.active){       
+    color: rgb(63, 191, 191); 
+}
+.topnav .active{ 
+    color: rgb(63, 191, 191); 
+}
+
+.topnav .toc.menu{
+    display: block;
+}
+
+.space {
+    display: block;
+    margin: 0;
+    padding: 5px;
+    content: "";
+    height: 15px;
+    width: 100%;
+    background-color: #333;
+    opacity: .8;
+}
+/**************** End Topnav  *****************/
+
+.text {
+    font-size: 11px;
+}
+
+.pusher {
+    margin-top: 48px;
+}
+
+/*****************************************
+      Card styling in about-us page
+*****************************************/
+.cardbase {
+    overflow: hidden;
+    height: auto;
+    width: inherit;
+    margin: 0;
+    padding: 2em 3em ;
+    border: 0 1px 1px thin #eaeaea;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.7);
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em;
+    padding: 0;
+    min-width: 200px;
+}
+.card {
+    position: relative;
+    width: 200px;
+    text-align: center;
+    margin: 1em;
+    height: auto;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.4);
+    font-family: arial;
+    padding-bottom: 1em;
+   
+}
+.card img {
+    width: 100%;
+    height: 45%;
+}
+.card h1{
+    font-size: 14px;
+}
+.card p{
+    font-size: 12px;
+}
+.card a {
+    text-decoration: none;
+}
+.card a:hover {
+    opacity: 0.7;
+}
+.cardtitle {
+    color: darkgray;
+    font-size: 16px;
+}
+
+.cardbasetitle {
+    object-position: center;
+    display: inline-block;
+    min-width: 200px;
+    margin: 0 1em 0 0;
+    padding-top: 45px;
+    padding-left: 15px;
+    font-size: 18px;
+}
+
+.wrapper {
+    padding: 0 10px;
+}
+.wrapper::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Icons format styling */
+.fa {
+    padding-left: 8px;
+    font-size: 24px;
+    color: rgb(178, 76, 76);
+}
+
+
+/*****************************************
+        event page styling
+*****************************************/
+.eventcard {
+    overflow: hidden;
+    height: auto;
+    width: inherit;
+    margin: auto;
+    padding: 2em 1.5em ;
+    background-color:rgba(32, 18, 18, 0.03);
+    border: 0 1px 1px thin #eaeaea;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.7);
+}
+.event {
+    padding: .5em .5em 0 .5em;
+    background-color: skyblue;
+    color: white;
+    height: 55px;
+    min-width: 300px;
+    font-size: 10px;
+    font-family: 'Roboto';
+}
+.event-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+.event-description {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.date {
+    display: inline;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0.25em;
+    margin: 0;
+    
+}
+.time, .location {
+    display: inline;
+    margin-left: .5em;
+}
+
+.date span {
+    text-align: center;
+}        
+.month, .ampm, .address {
+    text-transform: uppercase;
+}
+.day, .month, .year, .hour, .ampm, .address {
+    vertical-align: super;
+    font-size: 10px;
+}
+.event .material-icons {
+    vertical-align: text-bottom;
+    font-size: 24px;
+    color: #eee;
+}
+
+/*****************************************/
+
+/************************
+    slideshow styling 
+*************************/
+.slideshow-container {
+    margin: auto;
+    height: 320px;
+    position: relative;
+}
+.slider{
+    height: 320px;
+    background: #000;
+    border: 1px solid #eaeaea;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+.mask{
+    overflow: hidden;
+    height: 320px;
+}
+.slider ul{
+    width: 1500px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.slider li{
+    height: 320px; /* Height Image */
+    width: inherit;
+    position: absolute;
+    top: -325px; /* Original Position - Outside of the Slider */
+    list-style: none;
+}
+.mySlides{
+    background: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.slide1{
+    background-image: url("images/background-4.jpg");    
+}
+.slide2{
+    background-image: url("images/lib.jpg");
+   }
+.slide3{
+    background-image: url("images/muse.jpg");
+}
+.slide4{
+    background-image: url("images/lake.jpg");
+}
+
+.slide5{
+    background-image: url("images/venice.jpg");
+}
+
+.slider .tooltip{
+    background: rgba(0,0,0,0.7);
+    opacity: 0.7;
+    position: absolute;
+    bottom: 25px;
+    height: 45px;
+    width: 300px;
+    left: 10px;
+}
+.slider .tooltip h1 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 25px;
+    padding: 0 0 0 5px;
+}
+/* slideshow Animation */
+.slider li.slide1 {
+    animation: cycle 50s linear infinite;
+    -webkit-animation: cycle 50s linear infinite;
+    -moz-animation: cycle 50s linear infinite;
+    -ms-animation: cycle 50s linear infinite;
+}
+.slider li.slide2 {
+    animation: cycle2 50s linear infinite;
+    -webkit-animation: cycle2 50s linear infinite;
+    -moz-animation: cycle2 50s linear infinite;
+    -ms-animation: cycle2 50s linear infinite;
+}
+.slider li.slide3 {
+    animation: cycle3 50s linear infinite;
+    -webkit-animation: cycle3 50s linear infinite;
+    -moz-animation: cycle3 50s linear infinite;
+    -ms-animation: cycle3 50s linear infinite;
+}
+.slider li.slide4 {
+    animation: cycle4 50s linear infinite;
+    -webkit-animation: cycle4 50s linear infinite;
+    -moz-animation: cycle4 50s linear infinite;
+    -ms-animation: cycle4 50s linear infinite;
+}
+
+.slider li.slide5 {
+    animation: cycle5 50s linear infinite;
+    -webkit-animation: cycle5 50s linear infinite;
+    -moz-animation: cycle5 50s linear infinite;
+    -ms-animation: cycle5 50s linear infinite;
+}
+@keyframes cycle {
+    0%  { top: 0px; } /* When you start the slide, the first image is already visible */
+    4%  { top: 0px; } /* Original Position */
+    16% { top: 0px; opacity:1; z-index:0; } /* From 4% to 16 % = for 8 seconds the image is visible */
+    20% { top: 325px; opacity: 0; z-index: 0; } /* From 16% to 20% = for 1.5 seconds exit image */
+    21% { top: -325px; opacity: 0; z-index: -1; } /* Return to Original Position */
+    92% { top: -325px; opacity: 0; z-index: 0; }
+    96% { top: -325px; opacity: 0; } /* From 96% to 100% = for 1.5 second enter image*/
+   100%{ top: 0px; opacity: 1; }
+}
+@-webkit-keyframes cycle {
+    0%  { top: 0px; } /* When you start the slide, the first image is already visible */
+    4%  { top: 0px; } /* Original Position */
+    16% { top: 0px; opacity:1; z-index:0; } /* From 4% to 16 % = for 8 seconds the image is visible */
+    20% { top: 325px; opacity: 0; z-index: 0; } /* From 16% to 20% = for 1 second exit image */
+    21% { top: -325px; opacity: 0; z-index: -1; } /* Return to Original Position */
+    92% { top: -325px; opacity: 0; z-index: 0; }
+    96% { top: -325px; opacity: 0; } /* From 96% to 100% = for 1 second enter image*/
+   100%{ top: 0px; opacity: 1; }
+}
+
+@keyframes cycle2 {
+   0%  { top: -325px; opacity: 0px; } /* Original Position */
+   16% { top: -325px; opacity: 0px; }/* Starts moving after 16% to this position */
+   20% { top: 0px; opacity: 1; }
+   24% { top: 0px; opacity: 1; }  /* From 20% to 24% = for 1 second enter image*/
+   36% { top: 0px; opacity: 1; z-index: 0; }   /* From 24% to 36 % = for 3 seconds the image is visible */
+   40% { top: 325px; opacity: 0; z-index: 0; } /* From 36% to 40% = for 1 second exit image */
+   41% { top: -325px; opacity: 0; z-index: -1; }   /* Return to Original Position */
+   100%{ top: -325px; opacity: 0vh; z-index: -1; }
+}
+@-webkit-keyframes cycle2 {
+   0%  { top: -325px; opacity: 0px; } /* Original Position */
+   16% { top: -325px; opacity: 0px; }/* Starts moving after 16% to this position */
+   20% { top: 0px; opacity: 1; }
+   24% { top: 0px; opacity: 1; }  /* From 20% to 24% = for 1 second enter image*/
+   36% { top: 0px; opacity: 1; z-index: 0; }   /* From 24% to 36 % = for 3 seconds the image is visible */
+   40% { top: 325px; opacity: 0; z-index: 0; } /* From 36% to 40% = for 1 second exit image */
+   41% { top: -325px; opacity: 0; z-index: -1; }   /* Return to Original Position */
+   100%{ top: -325px; opacity: 0vh; z-index: -1; }
+}
+
+
+@keyframes cycle3 {
+   0%  { top: -325px; opacity: 0px; }
+   36% { top: -325px; opacity: 0; }
+   40% { top: 0px; opacity: 1; }
+   44% { top: 0px; opacity: 1; }
+   56% { top: 0px; opacity: 1; }
+   60% { top: 325px; opacity: 0px; z-index: 0; }
+   61% { top: -325px; opacity: 0px; z-index: -1; }
+   100%{ top: -325px; opacity: 0px; z-index: -1; }
+}
+
+@-webkit-keyframes cycle3 {
+   0%  { top: -325px; opacity: 0px; }
+   36% { top: -325px; opacity: 0; }
+   40% { top: 0px; opacity: 1; }
+   44% { top: 0px; opacity: 1; }
+   56% { top: 0px; opacity: 1; }
+   60% { top: 325px; opacity: 0px; z-index: 0; }
+   61% { top: -325px; opacity: 0px; z-index: -1; }
+   100%{ top: -325px; opacity: 0px; z-index: -1; }
+}
+
+@keyframes cycle4 {
+   0%  { top: -325px; opacity: 0px; }
+   56% { top: -325px; opacity: 0; }
+   60% { top: 0px; opacity: 1; }
+   64% { top: 0px; opacity: 1; }
+   76% { top: 0px; opacity: 1; }
+   80% { top: 325px; opacity: 0px; z-index: 0; }
+   81% { top: -325px; opacity: 0px; z-index: -1; }
+   100%{ top: -325px; opacity: 0px; z-index: -1; }
+}
+@-webkit-keyframes cycle4 {
+   0%  { top: -325px; opacity: 0px; }
+   56% { top: -325px; opacity: 0; }
+   60% { top: 0px; opacity: 1; }
+   64% { top: 0px; opacity: 1; }
+   76% { top: 0px; opacity: 1; }
+   80% { top: 325px; opacity: 0px; z-index: 0; }
+   81% { top: -325px; opacity: 0px; z-index: -1; }
+   100%{ top: -325px; opacity: 0px; z-index: -1; }
+}
+@keyframes cycle5 {
+   0%  { top: -325px; opacity: 0; }
+   76% { top: -325px; opacity: 0; }
+   80% { top: 0px; opacity: 1; }
+   84% { top: 0px; opacity: 1; }
+   96% { top: 0px; opacity: 1; z-index: 0; }
+   100%{ top: 325px; opacity: 0; z-index: 0; }
+}
+@-webkit-keyframes cycle5 {
+   0%  { top: -325px; opacity: 0; }
+   76% { top: -325px; opacity: 0; }
+   80% { top: 0px; opacity: 1; }
+   84% { top: 0px; opacity: 1; }
+   96% { top: 0px; opacity: 1; z-index: 0; }
+   100%{ top: 325px; opacity: 0; z-index: 0; }
+}
+/* PROGRESS BAR */
+
+.progress-bar {
+   position: relative;
+   top: -5px;
+   width: inherit;
+   height: 5px;
+   background: #000;
+   animation: fullexpand 50s ease-out infinite;
+}
+@keyframes fullexpand {
+   /* In these keyframes, the progress-bar is stationary */
+   0%, 20%, 40%, 60%, 80%, 100% { width: 0%; opacity: 0; }
+
+   /* In these keyframes, the progress-bar starts to come alive */
+   4%, 24%, 44%, 64%, 84% { width: 0%; opacity: 0.3; }
+
+   /* In these keyframes, the progress-bar moves forward for 3 seconds */
+   16%, 36%, 56%, 76%, 96% { width: 100%; opacity: 0.7; }
+
+   /* In these keyframes, the progress-bar has finished his path */
+   17%, 37%, 57%, 77%, 97% { width: 100%; opacity: 0.3; }
+
+   /* In these keyframes, the progress-bar will disappear and then resume the cycle */
+   18%, 38%, 58%, 78%, 98% { width: 100%; opacity: 0; }
+    
+}
+@-webkit-keyframes fullexpand {
+   /* In these keyframes, the progress-bar is stationary */
+   0%, 20%, 40%, 60%, 80%, 100% { width: 0%; opacity: 0; }
+
+   /* In these keyframes, the progress-bar starts to come alive */
+   4%, 24%, 44%, 64%, 84% { width: 0%; opacity: 0.3; }
+
+   /* In these keyframes, the progress-bar moves forward for 3 seconds */
+   16%, 36%, 56%, 76%, 96% { width: 100%; opacity: 0.7; }
+
+   /* In these keyframes, the progress-bar has finished his path */
+   17%, 37%, 57%, 77%, 97% { width: 100%; opacity: 0.3; }
+
+   /* In these keyframes, the progress-bar will disappear and then resume the cycle */
+   18%, 38%, 58%, 78%, 98% { width: 100%; opacity: 0; }
+    
+}
+
+.slider .tooltip {
+    transition: all 0.3s ease-in-out;
+}
+.slider li.slide1: hover .tooltip,
+.slider li.slide2: hover .tooltip,
+.slider li.slide3: hover .tooltip,
+.slider li.slide4: hover .tooltip {
+    left: 0px;
+}
+/* Pause slideshow when mouse hovers over a picture. This is not active for now*/
+.slider: hover li, 
+.slider hover .progress-bar {
+    animation-play-state: paused;
+}
+
+/**
+ *Style for Tablet
+**/
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-t-1 {width: 8.33%;}
+    .col-t-2 {width: 16.66%;}
+    .col-t-3 {width: 25%;}
+    .col-t-4 {width: 33.33%;}
+    .col-t-5 {width: 41.66%;}
+    .col-t-6 {width: 50%;}
+    .col-t-7 {width: 58.33%;}
+    .col-t-8 {width: 66.66%;}
+    .col-t-9 {width: 75%;}
+    .col-t-10 {width: 83.33%;}
+    .col-t-11 {width: 91.66%;}
+    .col-t-12 {width: 100%;}
+    
+    .grid{
+        width: 100%;
+        display: grid;
+        display: -ms-grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        
+        grid-column-gap: .5em;
+        grid-row-gap: 1em;
+        -ms-grid-columns: 1fr 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr 1fr 1fr;
+    }
+    .item1{ -ms-grid-column: 1; -ms-grid-row: 1; -ms-grid-column-align: center;}
+    .item2{ -ms-grid-column: 2; -ms-grid-row: 1; -ms-grid-column-align: center;}
+    .item3{ -ms-grid-column: 3; -ms-grid-row: 1; -ms-grid-column-align: center;}
+    .item4{ -ms-grid-column: 1; -ms-grid-row: 2; -ms-grid-column-align: center;}
+    .item5{ -ms-grid-column: 2; -ms-grid-row: 2; -ms-grid-column-align: center;}
+    .item6{ -ms-grid-column: 3; -ms-grid-row: 2; -ms-grid-column-align: center;}
+    .item7{ -ms-grid-column: 1; -ms-grid-row: 3; -ms-grid-column-align: center;}
+    .item8{ -ms-grid-column: 2; -ms-grid-row: 3; -ms-grid-column-align: center;}
+    .item9{ -ms-grid-column: 3; -ms-grid-row: 3; -ms-grid-column-align: center;}
+    .item10{ -ms-grid-column: 1; -ms-grid-row: 4; -ms-grid-column-align: center;}
+    
+}
+
+
+/**
+ *Style for Desktop
+**/ 
+@media only screen and (min-width: 1050px) {
+    .grid {
+    margin: 0;
+    width: inherit;
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 1.5em;
+    grid-row-gap: 1em;
+    justify-items: center;
+    
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+    
+    }
+    
+
+    .item1{ -ms-grid-column: 1; -ms-grid-row: 1; -ms-grid-column-align: center;}
+    .item2{ -ms-grid-column: 2; -ms-grid-row: 1; -ms-grid-column-align: center;}
+    .item3{ -ms-grid-column: 3; -ms-grid-row: 1; -ms-grid-column-align: center;}
+    .item4{ -ms-grid-column: 4; -ms-grid-row: 1; -ms-grid-column-align: center;}
+    .item5{ -ms-grid-column: 1; -ms-grid-row: 2; -ms-grid-column-align: center;}
+    .item6{ -ms-grid-column: 2; -ms-grid-row: 2; -ms-grid-column-align: center;}
+    .item7{ -ms-grid-column: 3; -ms-grid-row: 2; -ms-grid-column-align: center;}
+    .item8{ -ms-grid-column: 4; -ms-grid-row: 2; -ms-grid-column-align: center;}
+    .item9{ -ms-grid-column: 1; -ms-grid-row: 3; -ms-grid-column-align: center;}
+    .item10{ -ms-grid-column: 2; -ms-grid-row: 3; -ms-grid-column-align: center;}
+    
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    
+
+    /*********************
+        topnav styling 
+    **********************/
+    .topnav ul {
+        display: block;
+    }
+    .topnav .toc.menu {
+        display: none;
+    }
+    /***********  End Topnav  *************/
+    
+    .sidebar {
+        display: none;
+    }
+}
+
