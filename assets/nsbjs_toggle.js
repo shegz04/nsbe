@@ -1,4 +1,4 @@
 //menu button script
-function menubtn(x) {
+/*function menubtn(x) {
     x.classList.toggle("change");
-}
+}*/
